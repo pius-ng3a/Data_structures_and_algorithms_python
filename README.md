@@ -137,5 +137,8 @@ class Solution(object):
                     stack.pop()
             else:
                 stack.append(character)
-        return True
+        if not stack:
+            return True
+        else:
+            return False
 ```
