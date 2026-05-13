@@ -2,6 +2,7 @@
 This repository contains some tasks and their solutions to demonstrate effective use of data structures and algorithms in Python.
 
 **Problem 1**:
+
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -33,9 +34,10 @@ Constraints:
     2 <= nums.length <= 104
     -109 <= nums[i] <= 109
     -109 <= target <= 109
-
+    Only one valid answer exists.
+    
 **Solution 1**:
-
+```
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -54,10 +56,12 @@ class Solution(object):
                 return(index, numbers_index[target - num])
             numbers_index[num] = index
         return ()
-    Only one valid answer exists.
+```
+
 
 
 **Problem 2**:
+
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
 An input string is valid if:
@@ -106,6 +110,9 @@ Constraints:
     s consists of parentheses only '()[]{}'.
 
 **Solution 2**:
+
+We use a stack to store seen openning brackets and a dictionary to hold the corresponding openning and closing brakets.
+```
 class Solution(object):
     def isValid(self, s):
         """
@@ -128,3 +135,4 @@ class Solution(object):
             else:
                 stack.append(character)
         return True
+```
