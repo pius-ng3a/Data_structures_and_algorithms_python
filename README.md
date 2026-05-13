@@ -111,7 +111,10 @@ Constraints:
 
 **Solution 2**:
 
-We use a stack to store seen openning brackets and a dictionary to hold the corresponding openning and closing brakets.
+We use a stack to store seen openning brackets and a dictionary to hold the corresponding openning and closing brakets. We then traverse the given string from left to rights. When an oppening 
+bracket is encountered, we add it to the top of the stack. When a closing bracket is encountered, we check if the stack is empty or if the openning bracket at the top of the stack is not the matching one. If either of these conditions is reached, we conclude that the string is not well formated. If the character at the top of the stack is the correct opening bracket, we remove it and keep traversing the string.
+
+This algorithm has a time complexity of O(n), where n is the string length. We add and remove an element from a stack at O(1) time complexity. 
 ```
 class Solution(object):
     def isValid(self, s):
